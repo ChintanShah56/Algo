@@ -1,3 +1,5 @@
+package com.cs.trial.algo;
+
 public class SelectionSortAlgo {
 
     private void sort(int inputArr[]) {

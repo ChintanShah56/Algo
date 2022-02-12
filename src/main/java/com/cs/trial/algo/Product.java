@@ -1,3 +1,5 @@
+package com.cs.trial.algo;
+
 public class Product {
 
     Integer id;
@@ -36,7 +38,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "com.cs.trial.algo.Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +

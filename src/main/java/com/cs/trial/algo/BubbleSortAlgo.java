@@ -1,3 +1,5 @@
+package com.cs.trial.algo;
+
 import java.util.Arrays;
 
 public class BubbleSortAlgo {

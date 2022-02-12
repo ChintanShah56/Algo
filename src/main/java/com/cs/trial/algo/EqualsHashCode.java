@@ -1,5 +1,6 @@
+package com.cs.trial.algo;
+
 import java.util.*;
-import java.util.stream.Stream;
 
 public class EqualsHashCode {
     static {

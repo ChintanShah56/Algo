@@ -1,4 +1,6 @@
- class Person<T> {
+package com.cs.trial.algo;
+
+class Person<T> {
 
     void set(T t) {
 

@@ -1,3 +1,5 @@
+package com.cs.trial.algo;
+
 public class MergeSortAlgo {
 
     private void merge(int arr[], int left, int mid, int right) {

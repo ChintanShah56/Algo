@@ -1,3 +1,5 @@
+package com.cs.trial.algo;
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

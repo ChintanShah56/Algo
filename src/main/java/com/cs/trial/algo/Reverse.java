@@ -1,3 +1,5 @@
+package com.cs.trial.algo;
+
 public class Reverse {
 
     public static void main(String[] args) {
