@@ -1,5 +1,7 @@
 package com.cs.trial.algo;
 
+import java.util.Arrays;
+
 public class MergeSortAlgo {
 
     private void merge(int arr[], int left, int mid, int right) {
@@ -9,14 +11,14 @@ public class MergeSortAlgo {
         int n2 = right - mid;
 
         /* Create temp arrays */
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+        int leftTemp[] = new int[n1];
+        int rightTemp[] = new int[n2];
 
         /*Copy data to temp arrays*/
         for (int i = 0; i < n1; ++i)
-            L[i] = arr[left + i];
+            leftTemp[i] = arr[left + i];
         for (int j = 0; j < n2; ++j)
-            R[j] = arr[mid + 1 + j];
+            rightTemp[j] = arr[mid + 1 + j];
 
         /* Merge the temp arrays */
 
@@ -26,44 +28,42 @@ public class MergeSortAlgo {
         // Initial index of merged subarray array
         int k = left;
         while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k++] = L[i++];
+            if (leftTemp[i] <= rightTemp[j]) {
+                arr[k++] = leftTemp[i++];
             } else {
-                arr[k++] = R[j++];
+                arr[k++] = rightTemp[j++];
             }
         }
 
-        /* Copy remaining elements of L[] if any */
+        /* Copy remaining elements of leftTemp[] if any */
         while (i < n1) {
-            arr[k++] = L[i++];
+            arr[k++] = leftTemp[i++];
         }
 
         /* Copy remaining elements of R[] if any */
         while (j < n2) {
-            arr[k++] = R[j++];
+            arr[k++] = rightTemp[j++];
         }
     }
 
-    private void sort(int arr[], int l, int r) {
-        if (l < r) {
+    private void sort(int arr[], int left, int right) {
+        if (left < right) {
             // Find the middle point
-            int m = l + (r - l) / 2;
+            int mid = left + (right - left) / 2;
 
             // Sort first and second halves
-            sort(arr, l, m);
-            sort(arr, m + 1, r);
+            sort(arr, left, mid);
+            sort(arr, mid + 1, right);
 
             // Merge the sorted halves
-            merge(arr, l, m, r);
+            merge(arr, left, mid, right);
         }
     }
 
     public static void main(String[] args) {
-        int inputArr[] = {64, 34, 25, 12, 22, 11, 90};
+        int inputArr[] = {38, 27, 43, 3, 9, 82, 10};
         MergeSortAlgo msa = new MergeSortAlgo();
         msa.sort(inputArr, 0, inputArr.length - 1);
-        for (int i : inputArr) {
-            System.out.print(i + " ");
-        }
+        Arrays.stream(inputArr).forEach(s -> System.out.print(s + " "));
     }
 }
